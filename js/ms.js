@@ -115,3 +115,20 @@ function sortTable(e) {
         }
     }
 }
+
+function toggleSidePanel() {
+    var mapWidth = window.innerWidth;
+
+    // Check if the width is smaller than 1024px
+    if (mapWidth < 1024) {
+        document.getElementById('side-panel').style.display = 'none';
+    } else {
+        document.getElementById('side-panel').style.display = 'block';
+    }
+}
+
+// Initial check on page load
+toggleSidePanel();
+
+// Add event listener for window resize
+window.addEventListener('resize', toggleSidePanel);
